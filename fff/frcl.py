@@ -59,22 +59,3 @@ class File:
 
         except FileNotFoundError:
             return 'такого файла нееет'
-
-
-
-# readme = File(r'E:\РАБОЧИЙ СТОЛ\моя папка!\Readme.txt')
-# aaa = File(r'E:\РАБОЧИЙ СТОЛ\моя папка!\prov.txt')
-# print(readme.read_file())
-# aaa.write_file()
-file = input('Введите путь файла, либо напишите "НЕТ" если файла нет ')
-if file.lower() == 'нет':
-    name = input('Введите имя файла и его путь? я не знаю работает ли без пути....')
-    newfile = File(name)
-    newfile.create_file()
-else:
-    newfile = File(file)
-
-#newfile.write_file()
-#newfile.add_in_file()
-newfile.delete_deta()
-print(newfile.read_file())
