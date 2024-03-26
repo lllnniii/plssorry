@@ -59,3 +59,4 @@ class File:
 
         except FileNotFoundError:
             return 'такого файла нееет'
+#конец
