@@ -1,24 +1,37 @@
 from frcl import File
-import PyPDF2
+from pdf2image import convert_from_path
+from PIL import Image
 
 
-class FilePDF(File):
-    def __int__(self, file_path):
+class FilePdf(File):
+    def __init__(self, file_path, save_dir, res=400):
         super().__init__(file_path)
+        self.save_dir = save_dir
+        self.res = res
+        self.img_path = []
 
-    def output_file(self):
+    def open_pdf(self):
         try:
-            with open(self.file_path, 'rb') as ffile:
-                reader = PyPDF2.PdfReader(ffile)
-                txt = ''
-                for page in range(reader.getNumPages()):
-                    pa = reader.getPage(page)
-                    txt += pa.extractText()
-                return txt
+            pages = convert_from_path(self.file_path, self.res, poppler_path=r'C:\Program Files\poppler-24.02.0\Library\bin')
+
+            name_with_extension = self.file_path.rsplit('/')[-1]
+            name = name_with_extension.rsplit('.')[0]
+            for idx, page in enumerate(pages):
+                image_path = f'{self.save_dir}/{name}_{idx}.png'
+                page.save(image_path, 'PNG')
+                self.img_path.append(image_path)
+
+            for pages in self.img_path:
+                page = Image.open(pages)
+                page.show()
         except FileNotFoundError:
-            return 'Файла НеЕЕт'
+            return 'ПДФ не найден'
 
+file_path = input('введите путь файла ').replace('\\', '/')
+dir = input('введите путь к файлу для сохранения ')
 
-#inp = input()
-#path = FilePDF(inp)
-#print(path.output_file())
+pdf_file = FilePdf(file_path, dir)
+pdf_file.open_pdf()
+
+# newf = FilePdf('E:/РАБОЧИЙ СТОЛ/моя папка!/День рождения.pdf', r'E:\РАБОЧИЙ СТОЛ\моя папка!\pythonProject\old\files')
+# newf.open_pdf()
