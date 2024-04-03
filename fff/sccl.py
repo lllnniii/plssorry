@@ -12,7 +12,8 @@ class FilePdf(File):
 
     def open_pdf(self):
         try:
-            pages = convert_from_path(self.file_path, self.res, poppler_path=r'C:\Program Files\poppler-24.02.0\Library\bin')
+            pages = convert_from_path(self.file_path, self.res,
+                                      poppler_path=r'C:\Program Files\poppler-24.02.0\Library\bin')
 
             name_with_extension = self.file_path.rsplit('/')[-1]
             name = name_with_extension.rsplit('.')[0]
@@ -26,6 +27,7 @@ class FilePdf(File):
                 page.show()
         except FileNotFoundError:
             return 'ПДФ не найден'
+
 
 file_path = input('введите путь файла ').replace('\\', '/')
 dir = input('введите путь к файлу для сохранения ')
