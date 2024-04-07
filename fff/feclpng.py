@@ -38,7 +38,7 @@ class FilePng(File):
             resize.show()
             resize.save(self.file_path)
         except FileNotFoundError:
-            print('картинка не найдена')
+            print('картинка не найдена ')
 
 
 # file = FilePng(r"E:\РАБОЧИЙ СТОЛ\metoo.png")

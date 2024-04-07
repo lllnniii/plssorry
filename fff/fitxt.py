@@ -9,7 +9,7 @@ class FileTxt(File):
     def create_file(self):  # ЭТО СОЗДАНИЕ ФАЙЛА ЕСЛИ ЕГО НЕТ
         try:
             with open(self.file_path, 'x') as ffile:
-                return 'фааайл создан!'
+                return 'фааайл создан! '
         except FileExistsError:
             return 'уже есть такой файл'
 
