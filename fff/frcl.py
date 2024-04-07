@@ -9,4 +9,4 @@ class File:
         try:
             os.rename(self.file_path, new_path)
         except FileNotFoundError:
-            print("Файл не найден")
+            print("Файл не найден..")

@@ -34,6 +34,3 @@ class FilePdf(File):
 #
 # pdf_file = FilePdf(file_path, dir)
 # pdf_file.open_pdf()
-
-# newf = FilePdf('E:/РАБОЧИЙ СТОЛ/моя папка!/День рождения.pdf', r'E:\РАБОЧИЙ СТОЛ\моя папка!\pythonProject\old\files')
-# newf.open_pdf()

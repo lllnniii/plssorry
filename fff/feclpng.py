@@ -44,5 +44,3 @@ class FilePng(File):
 # file = FilePng(r"E:\РАБОЧИЙ СТОЛ\metoo.png")
 # file.show_png()
 # new_size = tuple([int(i) for i in input().split()])
-# print(new_size)
-# file.resize_png(new_size)

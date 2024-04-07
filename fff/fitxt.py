@@ -11,7 +11,7 @@ class FileTxt(File):
             with open(self.file_path, 'x') as ffile:
                 return 'фааайл создан!'
         except FileExistsError:
-            return 'уже есть файл'
+            return 'уже есть такой файл'
 
     def read_file(self):  # туда сюда просто вывод данных.
         try:

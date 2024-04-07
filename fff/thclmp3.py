@@ -30,4 +30,4 @@ class FileMp3(File):
 # file.play_mp3()
 # com = input()
 # pygame.time.delay(5000)
-# file.stop_mp3()
+
