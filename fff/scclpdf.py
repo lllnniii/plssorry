@@ -15,7 +15,7 @@ class FilePdf(File):
             pages = convert_from_path(self.file_path, self.res,
                                       poppler_path=r'C:\Program Files\poppler-24.02.0\Library\bin')
 
-            name_with_extension = self.file_path.rsplit('/')[-1]
+            name_with_extension = self.file_path.rsplit('\\')[-1]
             name = name_with_extension.rsplit('.')[0]
             for idx, page in enumerate(pages):
                 image_path = f'{self.save_dir}/{name}_{idx}.png'
@@ -29,11 +29,11 @@ class FilePdf(File):
             return 'ПДФ не найден'
 
 
-file_path = input('введите путь файла ').replace('\\', '/')
-dir = input('введите путь к файлу для сохранения ')
-
-pdf_file = FilePdf(file_path, dir)
-pdf_file.open_pdf()
+# file_path = input('введите путь файла ').replace('\\', '/')
+# dir = input('введите путь к файлу для сохранения ')
+#
+# pdf_file = FilePdf(file_path, dir)
+# pdf_file.open_pdf()
 
 # newf = FilePdf('E:/РАБОЧИЙ СТОЛ/моя папка!/День рождения.pdf', r'E:\РАБОЧИЙ СТОЛ\моя папка!\pythonProject\old\files')
 # newf.open_pdf()

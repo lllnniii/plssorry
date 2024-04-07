@@ -26,8 +26,8 @@ class FileMp3(File):
         pygame.mixer.music.stop()
 
 
-file = FileMp3(input('Введите путь файла '))
-file.play_mp3()
+# file = FileMp3(input('Введите путь файла '))
+# file.play_mp3()
 # com = input()
 # pygame.time.delay(5000)
 # file.stop_mp3()
