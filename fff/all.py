@@ -41,4 +41,4 @@ if plsidun:
         plsidun.show_png()
 else:
     print('выберите другой файл')
-#txt ne rabotaet tk ya dura
+    
